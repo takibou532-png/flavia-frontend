@@ -1,0 +1,110 @@
+#root{
+  width: 100%;
+  height: 100vh;
+}
+.body{
+  margin: 1px;
+  padding: 1px;
+  width: 100%;
+}
+.ImgTitle{
+  background-image: url("Pizza.jpg");
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  to {
+    background-position-x: -500px ;
+  }
+}
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glowButton {
+  0% {
+    box-shadow: 0 0 0 rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255,255,255,0.2);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatingBtn {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes softGlow {
+  0% { box-shadow: 0 0 0 rgba(255,0,0,0.2); }
+  50% { box-shadow: 0 0 20px rgba(255,0,0,0.4); }
+  100% { box-shadow: 0 0 0 rgba(255,0,0,0.2); }
+}
