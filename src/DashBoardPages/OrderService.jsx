@@ -59,7 +59,7 @@ useEffect(() => {
 // get All Orders
      const loadOrders= async ()=>  {
         try{
-        const res = await axios.get("http://localhost:8080/api/admin/orders",
+        const res = await axios.get("https://flavia-backend.onrender.com/api/admin/orders",
            {
         withCredentials: true,
         headers: { "Content-Type": "application/json" }
@@ -82,7 +82,7 @@ useEffect(() => {
   const loadProfit = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/admin/orders/profit/${type}`,
+        `https://flavia-backend.onrender.com/api/admin/orders/profit/${type}`,
         {
           withCredentials:true,
           headers:{"Content-Type": "application/json" }
@@ -100,7 +100,7 @@ useEffect(() => {
  async function handleDeliveredSubmit(orderId) {
   try {
     await axios.patch(
-      `http://localhost:8080/api/admin/orders/delivered/${orderId}`,
+      `https://flavia-backend.onrender.com/api/admin/orders/delivered/${orderId}`,
       null,
       {
         withCredentials: true,
@@ -125,7 +125,7 @@ useEffect(() => {
  async function handleCanceldSubmit(orderId) {
   try {
     await axios.patch(
-      `http://localhost:8080/api/admin/orders/cancel/${orderId}`,
+      `https://flavia-backend.onrender.com/api/admin/orders/cancel/${orderId}`,
      null,
       {
         withCredentials: true,

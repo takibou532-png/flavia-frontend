@@ -108,7 +108,7 @@ export default function ItemService(){
  async function handleEditeSubmit(id, updatedItem) {
   try {
     await axios.put(
-      `http://localhost:8080/api/admin/items/${id}`,
+      `https://flavia-backend.onrender.com/api/admin/items/${id}`,
       updatedItem,
       {
         withCredentials: true,
@@ -129,7 +129,7 @@ export default function ItemService(){
     function handleAddSubmit(item){
     const handleAdd=async(item)=>{
         try{
-        res =await axios.post("http://localhost:8080/api/admin/items",item,
+        res =await axios.post("https://flavia-backend.onrender.com/api/admin/items",item,
             {withCredentials:true,
                 headers:{"Content-Type" :"application/json"}
             }
@@ -148,7 +148,7 @@ handleAdd(item);
   function handleDeleteSubmit(id){
     const handleDelete = async(id)=>{
      try{
-      const res =await axios.delete(`http://localhost:8080/api/admin/items/${id}`,
+      const res =await axios.delete(`https://flavia-backend.onrender.com/api/admin/items/${id}`,
           {withCredentials:true,
                 headers:{"Content-Type" :"application/json"}
             }

@@ -119,7 +119,7 @@ export default function EmployeeService(){
     useEffect(()=>{
         const loadEmployees= async ()=>  {
         try{
-        const res = await axios.get("http://localhost:8080/api/admin/employees",
+        const res = await axios.get("https://flavia-backend.onrender.com/api/admin/employees",
           {withCredentials:true}
         );
          setEmployees(res.data);
@@ -136,7 +136,7 @@ export default function EmployeeService(){
     useEffect(()=>{
         const loadDeliveries= async ()=>  {
         try{
-        const res = await axios.get("http://localhost:8080/delivery/get-deliveries",
+        const res = await axios.get("https://flavia-backend.onrender.com/delivery/get-deliveries",
           {withCredentials:true}
         );
          setDeliveries(res.data);
@@ -154,7 +154,7 @@ export default function EmployeeService(){
  async function handleEditeSubmit(id, updatedemployee) {
   try {
     await axios.put(
-      `http://localhost:8080/api/admin/employees/${id}`,
+      `https://flavia-backend.onrender.com/api/admin/employees/${id}`,
       updatedemployee,
       {
         withCredentials: true,
@@ -178,7 +178,7 @@ export default function EmployeeService(){
   
   try {
     await axios.put(
-      `http://localhost:8080/delivery/${id}`,
+      `https://flavia-backend.onrender.com/delivery/${id}`,
   {fullname:delivery.fullname,email:delivery.email},
       {
         withCredentials: true,
@@ -202,7 +202,7 @@ export default function EmployeeService(){
   async function handleAddSubmit(employee){
   try{
     const res = await axios.post(
-      "http://localhost:8080/api/admin/employees",
+      "https://flavia-backend.onrender.com/api/admin/employees",
       employee,
       {
         withCredentials: true,
@@ -222,7 +222,7 @@ export default function EmployeeService(){
   async function handleAddSubmitD(delivery){
   try{
     const res = await axios.post(
-      "http://localhost:8080/delivery/createDelivery",
+      "https://flavia-backend.onrender.com/delivery/createDelivery",
       delivery,
       {
         withCredentials: true,
@@ -244,7 +244,7 @@ export default function EmployeeService(){
   function handleDeleteSubmit(id){
     const handleDelete = async(id)=>{
      try{
-      const res =await axios.delete(`http://localhost:8080/api/admin/employees/${id}`,
+      const res =await axios.delete(`https://flavia-backend.onrender.com/api/admin/employees/${id}`,
           {withCredentials:true,
                 headers:{"Content-Type" :"application/json"}
             }
@@ -264,7 +264,7 @@ export default function EmployeeService(){
   function handleDeleteSubmitD(id){
     const handleDeleteD = async(id)=>{
      try{
-      const res =await axios.delete(`http://localhost:8080/delivery/${id}`,
+      const res =await axios.delete(`https://flavia-backend.onrender.com/delivery/${id}`,
           {withCredentials:true,
                 headers:{"Content-Type" :"application/json"}
             }

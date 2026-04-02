@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
 
   const fetchMe = async () => {
     try {
-      const res = await fetch("http://localhost:8080/admin/me", {
+      const res = await fetch("https://flavia-backend.onrender.com/admin/me", {
         method: "GET",
         credentials: "include",
       });
@@ -34,7 +34,7 @@ export function AuthProvider({ children }) {
   };
 
 const login = async (email, password) => {
-  const res = await fetch("http://localhost:8080/admin/login", {
+  const res = await fetch("https://flavia-backend.onrender.com/admin/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
@@ -52,7 +52,7 @@ await fetchMe();
 
   const logout = async () => {
     try{ 
-    const res= await axios.post("http://localhost:8080/admin/logout",{},
+    const res= await axios.post("https://flavia-backend.onrender.com/admin/logout",{},
       {withCredentials:true,
          headers: { "Content-Type": "application/json" }
       }

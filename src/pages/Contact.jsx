@@ -18,7 +18,7 @@ export default function Contact() {
   async function handleAddSubmit(reserv){
   try{
     const res = await axios.post(
-      "http://localhost:8080/api/reservations",
+      "https://flavia-backend.onrender.com/api/reservations",
       reserv,
       {
         withCredentials: true,

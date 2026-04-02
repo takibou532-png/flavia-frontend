@@ -26,7 +26,7 @@ export default function Settings() {
       alert("Passwords do not match");
       return;
     }try{
-    const res= await axios.put(`http://localhost:8080/admin/change-password`,{oldPassword,newPassword},
+    const res= await axios.put(`https://flavia-backend.onrender.com/admin/change-password`,{oldPassword,newPassword},
       {
         withCredentials:true,
          headers:{"Content-Type" :"application/json"}

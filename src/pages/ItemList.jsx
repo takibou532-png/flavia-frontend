@@ -86,7 +86,7 @@ export default function ItemList() {
 useEffect(() => {
   const loadCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/categories");
+      const res = await axios.get("https://flavia-backend.onrender.com/api/categories");
       setCategories(res.data);
 
       // Set default category only once
@@ -107,7 +107,7 @@ useEffect(() => {
     const loadItems = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/items/category/${categoryName}`
+          `https://flavia-backend.onrender.com/api/items/category/${categoryName}`
         );
         setItems(res.data);
       } catch (err) {
@@ -121,7 +121,7 @@ useEffect(() => {
     const loadAllItems = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/items`
+          `https://flavia-backend.onrender.com/api/items`
         );
         setAllItems(res.data);
       } catch (err) {
@@ -152,7 +152,7 @@ useEffect(() => {
 console.log("ORDER SENT:", newOrder);
   try {
     const res = await axios.post(
-      "http://localhost:8080/api/orders",
+      "https://flavia-backend.onrender.com/api/orders",
       newOrder,
       {
         withCredentials:true,

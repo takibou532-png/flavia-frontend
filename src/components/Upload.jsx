@@ -32,7 +32,7 @@ export default function Upload({ onUploaded }) {
  
     try {
       const res = await axios.post(
-        "http://localhost:8080/Admin/upload",
+        "https://flavia-backend.onrender.com/Admin/upload",
         formData,
         {
           headers: {

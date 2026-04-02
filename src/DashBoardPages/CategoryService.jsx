@@ -82,7 +82,7 @@ const {theme}=useTheme();
     useEffect(()=>{
         const loadCategories= async ()=>  {
         try{
-        const res = await axios.get("http://localhost:8080/api/categories");
+        const res = await axios.get("https://flavia-backend.onrender.com/api/categories");
          setCategories(res.data);
 
         }catch (err) {
@@ -98,7 +98,7 @@ const {theme}=useTheme();
     function handleEditeSubmit(id,category){
      const handleEdite= async(id,category)=>{
       try{
-        const res=await axios.put(`http://localhost:8080/api/admin/categories/${id}`,category,{
+        const res=await axios.put(`https://flavia-backend.onrender.com/api/admin/categories/${id}`,category,{
           withCredentials:true,
           
                    headers:{"Content-Type" :"application/json"}
@@ -117,7 +117,7 @@ const {theme}=useTheme();
     function handleAddSubmit(category){
     const handleAdd=async(category)=>{
         try{
-        res =await axios.post("http://localhost:8080/api/admin/categories",category,
+        res =await axios.post("https://flavia-backend.onrender.com/api/admin/categories",category,
             {withCredentials:true,
                 headers:{"Content-Type" :"application/json"}
             }
@@ -138,7 +138,7 @@ handleAdd(category)
   function handleDeleteSubmit(id){
     const handleDelete = async(id)=>{
      try{
-      const res =await axios.delete(`http://localhost:8080/api/admin/categories/${id}`,
+      const res =await axios.delete(`https://flavia-backend.onrender.com/api/admin/categories/${id}`,
           {withCredentials:true,
                 headers:{"Content-Type" :"application/json"}
             }

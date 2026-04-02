@@ -13,7 +13,7 @@ export default function CategoryList() {
   useEffect(() => {
     const loadCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/categories");
+        const res = await axios.get("https://flavia-backend.onrender.com/api/categories");
         setCategories(res.data);
       } catch (err) {
         console.error("Failed to load categories", err);

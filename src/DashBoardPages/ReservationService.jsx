@@ -48,7 +48,7 @@ export default function ReservationService(){
     useEffect(()=>{
         const loadReservations= async ()=>  {
         try{
-        const res = await axios.get("http://localhost:8080/api/admin/reservations",
+        const res = await axios.get("https://flavia-backend.onrender.com/api/admin/reservations",
            {
         withCredentials: true,
         headers: { "Content-Type": "application/json" }
