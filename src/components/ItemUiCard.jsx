@@ -1,7 +1,8 @@
 import { Button } from "@mui/material";
 import { useTheme } from "../context/ThemeContext";
 import "../App.css/";
-import AnimateOnScroll from "./AnimateOnScroll";
+
+import useScrollAnimation from "../hooks/useScrollAnimation";
 export default function ItemUiCard({ item,handleClickOpenQuentity }) {
   const { theme } = useTheme();
 
@@ -10,12 +11,13 @@ export default function ItemUiCard({ item,handleClickOpenQuentity }) {
   const headingClass = theme === "dark" ? "text-gray-100" : "text-gray-900";
   const textClass = theme === "dark" ? "text-gray-300" : "text-gray-600";
   const shadowClass = theme === "dark" ? "shadow-gray-700" : "shadow-lg";
-
+   const ref = useScrollAnimation("animate-fadeup");
   return (
  
 
     <div
-      className={`rounded-2xl overflow-hidden ${bgClass} ${shadowClass} hover:shadow-xl transition-shadow group cursor-pointer`}
+    ref={ref}
+      className={`opacity-0 animate-fadeup rounded-2xl overflow-hidden ${bgClass} ${shadowClass} hover:shadow-xl transition-shadow group cursor-pointer `}
       style={{display:item.available ? "inline-block" :"none", }}
     >
       

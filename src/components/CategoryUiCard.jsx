@@ -1,5 +1,6 @@
 import { useTheme } from "../context/ThemeContext";
 import "../App.css/";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 export default function CategoryUiCard({ item }) {
   const { theme } = useTheme();
 
@@ -8,14 +9,12 @@ export default function CategoryUiCard({ item }) {
   const headingClass = theme === "dark" ? "text-gray-100" : "text-gray-900";
   const textClass = theme === "dark" ? "text-gray-300" : "text-gray-600";
   const shadowClass = theme === "dark" ? "shadow-gray-700" : "shadow-lg";
-
+       const ref = useScrollAnimation("animate-fadeup");
   return (
     <div
-      className={`rounded-2xl overflow-hidden ${bgClass} ${shadowClass} hover:shadow-xl transition-shadow group cursor-pointer`}
-   style={{animation: "fadeUp 0.6s ease",
-      animationDelay: "0.3s",
-      opacity: 0,
-      animationFillMode: "forwards"}} >
+   ref={ref}
+      className={`opacity-0 animate-fadeup rounded-2xl overflow-hidden ${bgClass} ${shadowClass} hover:shadow-xl transition-shadow group cursor-pointer `}
+   >
       <div className="relative h-64 overflow-hidden">
         <img
           src={`${item.imgUrl}`}

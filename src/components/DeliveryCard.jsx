@@ -97,6 +97,9 @@ export default function DeliveryCard({
             </Typography>
           </Box>
 
+          <Typography variant="body2" color="success">
+            DELIVERY
+          </Typography>
           <Typography variant="body2" color="text.secondary">
             ID: # {delivery.id}
           </Typography>

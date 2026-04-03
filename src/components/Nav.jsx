@@ -102,11 +102,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full backdrop-blur border-b transition-colors duration-300 ${
-        theme === "light"
-          ? "bg-gradient-to-br from-gray-100 to-gray-100 text-gray-700"
-          : "bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100"
-      }`}
+     className={`fixed top-0 z-50 w-full backdrop-blur border-b transition-colors duration-300 ${
+  theme === "light"
+    ? "bg-white text-gray-700"
+    : "bg-black black-300 text-gray-100"
+}`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Top Bar */}
@@ -119,11 +119,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
             }`}
           >
             <div
-            
+                
             >
-             
+             <img src={theme==="dark"?"Dark Mode.png":"Light Mode.png"} style={{height:"50px"}} />
             </div>
-            <span className="text-xl font-bold tracking-tight">Taki Food</span>
+       
           </Link>
 
           {/* Desktop Nav */}
