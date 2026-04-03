@@ -123,7 +123,7 @@ export default function EmployeeService(){
           {withCredentials:true}
         );
          setEmployees(res.data);
-            console.log(res.data);
+          
         }catch (err) {
         console.error("employee failed to load "+err)
         }finally {
@@ -140,7 +140,8 @@ export default function EmployeeService(){
           {withCredentials:true}
         );
          setDeliveries(res.data);
-            console.log(res.data);
+         
+
         }catch (err) {
         console.error("Delivery failed to load "+err)
         }finally {
@@ -210,7 +211,7 @@ export default function EmployeeService(){
       }
     );
 
-    console.log(res.data);
+   
 
    
 
@@ -230,7 +231,7 @@ export default function EmployeeService(){
       }
     );
 
-    console.log(res.data);
+  
 
    
 
@@ -249,9 +250,9 @@ export default function EmployeeService(){
                 headers:{"Content-Type" :"application/json"}
             }
       )
-      console.log(res);
+  
      }catch(err){
-      console.log("delete employee error "+err);
+      console.error("delete employee error "+err);
      }
 
     }
@@ -269,9 +270,9 @@ export default function EmployeeService(){
                 headers:{"Content-Type" :"application/json"}
             }
       )
-      console.log(res);
+     
      }catch(err){
-      console.log("delete delivery error "+err);
+      console.error("delete delivery error "+err);
      }
 
     }
