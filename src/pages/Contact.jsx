@@ -2,6 +2,12 @@ import { MapPin, Clock, Phone, Mail } from 'lucide-react';
 import { useTheme } from "../context/ThemeContext";
 import { useState, } from 'react';
 import axios from 'axios';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { Button, Grid as MuiGrid, Alert } from "@mui/material";
 export default function Contact() {
   const { theme } = useTheme();
  
@@ -14,7 +20,7 @@ export default function Contact() {
   const inputBg = theme === "dark" ? "bg-gray-700 border-gray-600 text-white" : "bg-gray-100 border-gray-300 text-gray-800";
   const inputPlaceholder = theme === "dark" ? "placeholder-gray-400" : "placeholder-gray-500";
   const [reservation,setReservation]=useState({name:'',partySize:"",phoneNumber:"",email:"",date:"",time:"",specialRequest:""})
-
+  const [successOpen,setSuccessOpen]=useState(false);
   async function handleAddSubmit(reserv){
   try{
     const res = await axios.post(
@@ -26,7 +32,7 @@ export default function Contact() {
       }
     );
 
-    console.log(res.data);
+   setSuccessOpen(true);
 
    
 
@@ -271,6 +277,23 @@ export default function Contact() {
         </div>
 
       </div>
+           <Dialog open={successOpen} onClose={() => setSuccessOpen(false)}  PaperProps={{
+          sx: {
+            borderRadius: 4,
+            animation: "scaleIn 0.3s ease",
+          },
+        }}>
+        <DialogTitle>✅ Reservation Confirmed</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Your reservation has been placed successfully 🎉 <br />
+            We will contact you soon!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setSuccessOpen(false)}>OK</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

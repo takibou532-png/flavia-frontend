@@ -121,7 +121,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
             <div
                 
             >
-             <img src={theme==="dark"?"Dark Mode.png":"Light Mode.png"} style={{height:"50px"}} />
+             <img src={theme==="dark"?"Dark Mode.jpg":"Light Mode.png"} style={{height:"50px"}} />
             </div>
        
           </Link>
