@@ -149,7 +149,7 @@ useEffect(() => {
       
     }))
   };
-console.log("ORDER SENT:", newOrder);
+
   try {
     const res = await axios.post(
       "https://flavia-backend.onrender.com/api/orders",
@@ -161,7 +161,7 @@ console.log("ORDER SENT:", newOrder);
     
     );
 
-    console.log(res.data);
+  
 
     setCart([]); 
     setSuccessOpen(true);
@@ -303,7 +303,7 @@ console.log("ORDER SENT:", newOrder);
             />
           </form>
           <ReCAPTCHA
-  sitekey="6Lc2cp0sAAAAANSObA9QqXJOU6_mCslz055PdLN_"
+  sitekey="6Lc7WqYsAAAAACj4pc4ZeK63ysM6WmVLLMwyhsjP"
   onChange={(value) => setCaptchaValue(value)}
 />
           {cart.map(item => (

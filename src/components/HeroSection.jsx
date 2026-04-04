@@ -39,13 +39,12 @@ export function HeroSection() {
           <div className="max-w-2xl">
 
             {/* Heading */}
-            <h1
+            <h2
               className="text-6xl font-extrabold text-white mb-6 leading-tight"
               style={{ animation: "fadeSlideRight 0.8s ease forwards" }}
             >
-              Delicious Food <br />
-              Delivered Fast
-            </h1>
+             Savor the flavor of <span style={{color:"#aeea00", fontFamily:"fantasy" }}>flavia</span>
+            </h2>
 
             {/* Paragraph */}
             <p
