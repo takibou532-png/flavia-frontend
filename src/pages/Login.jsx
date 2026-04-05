@@ -30,7 +30,7 @@ useEffect(() => {
 
     const handleSubmit = async (e) => {
   e.preventDefault();
-console.log("admin after login:", admin);
+
   try {
     await login(email, password);
     setAlert({message:"welcom to your dashboard",color:"success"});
@@ -59,9 +59,9 @@ console.log("admin after login:", admin);
           <div className="mb-8">
             <div className="flex items-center gap-2 mb-2">
               <div className="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
-                <span className="text-2xl">🍔</span>
+                <img src="Light Mode.png"  />
               </div>
-              <span className="text-3xl font-bold text-gray-900">Taki Food</span>
+            
             </div>
             <p className="text-gray-600 mt-2">Dashboard Login</p>
           </div>
