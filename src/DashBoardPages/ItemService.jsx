@@ -92,9 +92,10 @@ export default function ItemService(){
     useEffect(()=>{
         const loadItems= async ()=>  {
         try{
-        const res = await axios.get("http://localhost:8080/api/items");
+        const res = await axios.get("https://flavia-backend.onrender.com/api/items");
          setItems(res.data);
-            console.log(res.data);
+         
+
         }catch (err) {
         console.error("Item failed to load "+err)
         }finally {
@@ -135,7 +136,7 @@ export default function ItemService(){
             }
 
         )
-        console.log(res.data)
+      
     }catch(err){
         console.error("item post err "+err);
     }
@@ -153,9 +154,9 @@ handleAdd(item);
                 headers:{"Content-Type" :"application/json"}
             }
       )
-      console.log(res);
+     
      }catch(err){
-      console.log("delete item error "+err);
+      console.error("delete item error "+err);
      }
 
     }
