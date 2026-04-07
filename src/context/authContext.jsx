@@ -34,20 +34,21 @@ export function AuthProvider({ children }) {
   };
 
 const login = async (email, password) => {
-  const res = await fetch("https://flavia-backend.onrender.com/admin/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify({ email, password }),
-  });
+  setLoading(true); 
+  try {
+    const res = await fetch("https://flavia-backend.onrender.com/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ email, password }),
+    });
 
-  if (!res.ok) throw new Error("Invalid credentials");
+    if (!res.ok) throw new Error("Invalid credentials");
 
-  
-  
-
-
-await fetchMe();
+    await fetchMe();
+  } finally {
+    setLoading(false); 
+  }
 };
 
   const logout = async () => {

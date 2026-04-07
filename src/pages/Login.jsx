@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import { colors } from "@mui/material";
 export default function Login(){
-    const {login,admin}=useAuth();
+    const {login,admin,loading}=useAuth();
      const [showPassword, setShowPassword] = useState(false);
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -147,13 +147,43 @@ useEffect(() => {
             </div>
 
             {/* Login Button */}
-            <button
-              type="submit"
-              className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center gap-2 group"
-             >
-              Sign In
-              <ArrowForwardOutlinedIcon  className="h-5 w-5 group-hover:translate-x-1 transition-transform" style={{transition:"0.3s"}}/>
-            </button>
+           <button
+  type="submit"
+  disabled={loading}
+  className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+>
+  {loading ? (
+    <>
+      <svg
+        className="animate-spin h-5 w-5 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          className="opacity-25"
+          cx="12" cy="12" r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+        />
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v8z"
+        />
+      </svg>
+      Signing in...
+    </>
+  ) : (
+    <>
+      Sign In
+      <ArrowForwardOutlinedIcon
+        className="h-5 w-5 group-hover:translate-x-1 transition-transform"
+        style={{ transition: "0.3s" }}
+      />
+    </>
+  )}
+</button>
 
          
 

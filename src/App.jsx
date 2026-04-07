@@ -26,6 +26,19 @@ import DeliveryOrder from './DashBoardPages/DeliveryOrder'
 
 function App() {
 
+    useEffect(() => {
+    const ping = () => {
+      fetch("https://flavia-backend.onrender.com/api/categories")
+        .catch(() => {});
+    };
+    ping();
+    const interval = setInterval(ping, 10 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+
+
+
 
   return (
 <ThemeProvider>

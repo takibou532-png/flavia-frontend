@@ -60,8 +60,8 @@ const {theme,toggleTheme}=useTheme();
     <div
   className={`fixed left-0 top-0 h-screen bg-gradient-to-br
     ${theme === "light"
-      ? "from-gray-100 to-gray-100 text-gray-700 "
-      : "from-gray-700 to-gray-600 text-gray-100"}
+      ? "from-white-500 to-white-500 text-gray-700 "
+      : "from-black-700 to-black-600 text-gray-100"}
     transition-[width] duration-300 z-40
     ${isOpen ? "w-60" : "w-16"}
     shadow-2xl`}
@@ -70,12 +70,7 @@ const {theme,toggleTheme}=useTheme();
       <div className="flex items-center justify-between h-20 px-4 border-b border-gray-700 ">
         {isOpen && (
           <div className="flex items-center gap-2 font-bold text-xl">
-            <div className="p-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg">
-               🍔
-            </div>
-            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-              Taki Food
-            </span>
+           <img src={theme==="dark"?"Dark Mode.jpg":"Light Mode.png"} style={{height:"50px"}} />
           </div>
         )}
         <button
